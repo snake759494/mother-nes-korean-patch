@@ -33,7 +33,8 @@ def main(out='../work/test.nes'):
     glyphs = glyph_order(texts, '은는이가을를과와아야으로랑' + tmpl.chars() + tmpl.NAME_SYL)
     enc = Encoder(glyphs)
     k1 = glyphs[:E.NK1]
-    tmpl.GRID[:] = sorted(k1[:84], key=lambda ch: ch)
+    nm = [c for c in dict.fromkeys(tmpl.NAME_SYL) if c in k1]
+    tmpl.GRID[:] = sorted((nm + [c for c in k1 if c not in nm])[:84])
     patches = []
     prg = B.PRG0
     chrp = []

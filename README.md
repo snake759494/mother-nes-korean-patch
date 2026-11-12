@@ -5,8 +5,8 @@
 ## 적용 방법
 1. 아래 해시와 일치하는 **원본 `Mother (Japan).nes`** (No-Intro 형식, iNES 헤더 포함)를 준비합니다.
    - PowerShell: `Get-FileHash -Algorithm MD5 -LiteralPath '.\Mother (Japan).nes'`
-2. xdeltaUI 같은 도구로 원본 `.nes` 에 `Mother_KO_v1.0.xdelta` 를 적용합니다. (Patch = xdelta, Source File = 원본 ROM, Output File = 새 파일명)
-   - 명령줄: `xdelta3 -d -s "Mother (Japan).nes" Mother_KO_v1.0.xdelta "Mother (Korean).nes"`
+2. xdeltaUI 같은 도구로 원본 `.nes` 에 `Mother_KO_v1.1.xdelta` 를 적용합니다. (Patch = xdelta, Source File = 원본 ROM, Output File = 새 파일명)
+   - 명령줄: `xdelta3 -d -s "Mother (Japan).nes" Mother_KO_v1.1.xdelta "Mother (Korean).nes"`
 3. 만들어진 `.nes` 를 Mesen 등 **매퍼 191(NES 2.0)을 지원하는** 에뮬레이터에서 실행합니다.
 
 | 항목 | 값 |
@@ -15,9 +15,9 @@
 | 원본 ROM CRC32 | `cb084ac5` |
 | 원본 ROM MD5 | `bf1e0bc9c390fdbb2b3ca22d784db7d2` |
 | 원본 ROM SHA-256 | `ac14a63c080d810adcc1f43c102fcab8740425bd7404050216790aedc396ee2b` |
-| xdelta SHA-256 | `12b70298a60d492b97686f85212571ed12bec98ddb9f74de8aea41cd362f98c9` |
+| xdelta SHA-256 | `10e05160f3545e710ba6d0fea4328dbc973545bc28906b860fac347d9c68a26d` |
 | 결과 ROM 크기 | 655,376 바이트 |
-| 결과 ROM SHA-256 | `1ff266b76455a77289228a94b0765f2a7e66ee45deb82a1a82cdd33ea24f3874` |
+| 결과 ROM SHA-256 | `5374a945d50ab2e300933c25b4f27e3c2e955ce21ce12cf69740524122915a74` |
 
 ## 주의
 - 원본에서 만든 **상태저장(세이브 스테이트)** 과 세이브 파일(.sav)은 쓰지 마세요. ROM 구조가 달라 글자가 깨지거나 멈출 수 있습니다. 새로 시작해 주세요.
@@ -28,7 +28,7 @@
 - 본편 대사 904개, 전투 메시지, 아이템·PSI·상태 이름, 적 이름, 메뉴, 프롤로그, 이름 입력 화면 전수 직접 번역
 - 한글 849자: 자주 쓰는 155자는 1바이트, 나머지는 2바이트 부호. 글자는 그릴 때마다 CHR-RAM 캐시에 올림
 - 이름 뒤 조사(은/는·이/가·을/를 등)를 받침에 맞게 자동 선택
-- 이름 입력 표를 한글 음절로 교체
+- 이름 입력 표를 한글 음절로 교체 — 닌텐·아나·앤·로이드·테디·피피·미미·미니 등 등장인물 이름을 입력할 수 있음
 - 글꼴: 갈무리7(8×8 원래 크기, 확대·축소 없음)
 
 ## 그대로 둔 것

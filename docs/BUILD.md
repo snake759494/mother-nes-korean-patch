@@ -12,7 +12,7 @@
 2. 번역: `tr/ko_0.json`~`tr/ko_7.json`(`[{"id","ko"}]`), `tr/misc_ko.json` — 형식 규칙(한 줄 18칸, `{STR}`·`{NUM}` 토큰 유지, 조사 토큰 `{은}` `{이}` `{을}` 등)
 3. 빌드: `python make.py "../Mother (Japan) [한글패치].nes"`
 4. 검증: `python vfy.py` (ROM에 들어간 대사를 번역문과 바이트 단위로 대조)
-5. 차분 파일: `xdelta3 -e -0 -S none -s "Mother (Japan).nes" "Mother (Japan) [한글패치].nes" Mother_KO_v1.0.xdelta`
+5. 차분 파일: `xdelta3 -e -0 -S none -s "Mother (Japan).nes" "Mother (Japan) [한글패치].nes" Mother_KO_v1.1.xdelta`
 
 ## 에뮬레이터 시험
 `run.sh`가 Mesen 테스트러너로 `h.lua`를 실행합니다. `cmd.txt`에 `w 프레임`, `p 버튼 [유지]`, `shot 이름`, `save/load 이름`, `dump 이름`, `quit` 명령을 한 줄씩 적습니다.

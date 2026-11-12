@@ -81,7 +81,7 @@ FREE = [
     (P, 0x3BE78, '소년A'), (P, 0x3BEB8, '소녀B'), (P, 0x3BEF8, '소년C'), (P, 0x3BF38, '소년D'),
     (P, 0x3BF78, '피피'),
 ]
-NAME_SYL = '소년녀피'
+NAME_SYL = '소년녀피닌텐앤아나로이드테디미니'
 GRID = []   # filled by make: K1 syllables for name grid
 
 

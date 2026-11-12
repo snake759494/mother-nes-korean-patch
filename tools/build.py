@@ -101,6 +101,9 @@ def build(glyph_chars, text_patches, out_path, chr_patches=()):
     hdr[11] = 0x05
     chrd = bytearray(CHR0)
     for off, d in chr_patches: chrd[off:off + len(d)] = d
+    # '.' (code $70): original tile is a centered dot -> bottom period
+    o = 125 * 0x400 + 0x30 * 16
+    chrd[o:o + 16] = bytes(14) + bytes([0x60, 0x60]) if False else bytes(8) + bytes([0, 0, 0, 0, 0, 0, 0x60, 0x60])
     data = bytes(hdr) + bytes(prg) + bytes(chrd)
     open(out_path, 'wb').write(data)
     return s2

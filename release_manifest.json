@@ -1,12 +1,12 @@
 {
- "version": "v1.0",
- "asset": "Mother_KO_v1.0.xdelta",
- "asset_size": 50660,
- "asset_sha256": "12b70298a60d492b97686f85212571ed12bec98ddb9f74de8aea41cd362f98c9",
+ "version": "v1.1",
+ "asset": "Mother_KO_v1.1.xdelta",
+ "asset_size": 50721,
+ "asset_sha256": "10e05160f3545e710ba6d0fea4328dbc973545bc28906b860fac347d9c68a26d",
  "source_rom_size": 393232,
  "source_rom_crc32": "cb084ac5",
  "source_rom_md5": "bf1e0bc9c390fdbb2b3ca22d784db7d2",
  "source_rom_sha256": "ac14a63c080d810adcc1f43c102fcab8740425bd7404050216790aedc396ee2b",
  "result_rom_size": 655376,
- "result_rom_sha256": "1ff266b76455a77289228a94b0765f2a7e66ee45deb82a1a82cdd33ea24f3874"
+ "result_rom_sha256": "5374a945d50ab2e300933c25b4f27e3c2e955ce21ce12cf69740524122915a74"
 }
