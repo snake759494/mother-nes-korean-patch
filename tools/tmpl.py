@@ -43,6 +43,9 @@ def chars():
 
 
 def apply(prg0, chr0, enc, prg_p, chr_p):
+    # status screen: stray dakuten tile ($FE) on the row above 'ディフェンス'
+    assert prg0[0x1703] == 0xFE
+    prg_p.append((0x1703, bytes([0xC0])))
     for it in ITEMS:
         sp, (a, b), jp, ko = it[:4]
         cnt = it[4] if len(it) > 4 else 1
