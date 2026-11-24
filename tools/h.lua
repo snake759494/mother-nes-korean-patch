@@ -22,10 +22,11 @@ local function nextcmd()
     elseif a=="dump" then
       local h=io.open(dir..b..".bin","wb")
       local t={}
-      for i=0,0x3FFF do t[#t+1]=string.char(emu.read(i,emu.memType.nesPpuMemory)) end
       for i=0,0x7FF do t[#t+1]=string.char(emu.read(i,emu.memType.nesInternalRam)) end
-      for i=0,0x1FFF do t[#t+1]=string.char(emu.read(i,emu.memType.nesSaveRam)) end
+      local ok,e=pcall(function() for i=0,0x1FFF do t[#t+1]=string.char(emu.read(i,emu.memType.nesSaveRam)) end end)
+      if not ok then L:write("DUMPERR "..tostring(e)) end
       h:write(table.concat(t)) h:close()
+    elseif a=="poke" then emu.write(tonumber(b,16), tonumber(c2,16), emu.memType.nesSaveRam)
     elseif a=="quit" then break
     end
   end

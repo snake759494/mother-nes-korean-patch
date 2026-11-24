@@ -50,6 +50,7 @@ T0 = $0123
 T1 = $0124
 STAMP = $0130
 PSEL = $0125
+SRST = $0126
 """
 
 FIXED = "SRBASE = $0000" + COMMON + """
@@ -134,7 +135,17 @@ NUMUP:  PHA
         STA PSEL
         PLA
         JMP $CBFB
+; game SRAM unlock/lock: remember the state so the text engine restores it
+SRSET:  STA $A001
+        STA SRST
+        RTS
 FREE_END:
+.org $FE6F
+        LDA #$80
+        JMP SRSET
+.org $FE75
+        LDA #$C0
+        JMP SRSET
 
 .org $CB2B
         JSR NUMLO
@@ -368,7 +379,9 @@ CL3:    DEX
         STA IDLO,X
         LDA T1
         STA IDHI,X
-        LDA #$C0
+        LDA SRST
+        AND #$40
+        ORA #$80
         STA $A001
         LDA SLOTT,X
         STA T2
@@ -585,7 +598,9 @@ TI1:    LDA #$7F
         STA CLK
         LDA #$A5
         STA MAGIC
-        LDA #$C0
+        LDA SRST
+        AND #$40
+        ORA #$80
         STA $A001
         RTS
 
